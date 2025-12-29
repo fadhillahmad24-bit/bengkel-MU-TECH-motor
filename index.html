@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Bengkel Motor Jaya</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  background:#0f172a;
+  color:white;
+}
+
+body{
+  padding-top:80px;
+}
+
+
+/* NAVBAR */
+nav{
+  background:#020617;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  top:0;
+  z-index:9999; /* 🔥 PENTING */
+  position: fixed;
+  width: 100%;
+}
+
+  
+nav h1{
+  color:#ef4444;
+}
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:bold;
+}
+nav a:hover{
+  color:#f87171;
+}
+h3{
+  font-family: serif;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo img{
+  height:40px;   /* ukuran logo */
+  width:auto;
+}
+
+.logo span{
+  color:#ef4444;
+  font-size:22px;
+  font-weight:bold;
+}
+
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#dc2626,#7f1d1d);
+  padding:80px 20px;
+  text-align:center;
+}
+.hero h2{
+  font-size:36px;
+}
+.hero p{
+  margin-top:15px;
+  font-size:18px;
+}
+
+/* SECTION */
+section{
+  padding:60px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+.title{
+  text-align:center;
+  margin-bottom:40px;
+}
+.title h2{
+  color:#f87171;
+  font-size:30px;
+}
+
+/* CARD */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.card{
+  background:#1e293b;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 10px 20px rgba(0,0,0,.4);
+}
+.card{
+  background:#1e293b;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 10px 20px rgba(0,0,0,.4);
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* SAAT AKTIF */
+.card.active{
+  background:#dc2626;
+  color:white;
+  transform:scale(1.05);
+}
+#layanan .card:hover{
+  transform: translateY(-5px);
+  color: #d22525;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
+  text-align: center;
+}
+
+#kontak .card.active{
+  background:#16a34a; /* hijau */
+  transform:scale(1.05);
+}
+.card{
+  text-align: center;
+}
+
+
+/* FORM */
+form input, form textarea, form button{
+  width:100%;
+  padding:12px;
+  margin-top:12px;
+  border-radius:8px;
+  border:none;
+}
+form input, form textarea{
+  background:#334155;
+  color:white;
+}
+form textarea{
+  resize:none;
+  height:120px;
+}
+form button{
+  background:#d75454;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+form button:hover{
+  background:#e02323;
+}
+.card{
+  background:#07080b;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 10px 20px rgba(195, 84, 84, 0.4);
+  cursor:pointer;
+  transition:0.3s;
+  position: relative;
+}
+
+/* FIX CLICK GOOGLE MAPS */
+#kontak iframe{
+  pointer-events: none;
+}
+
+#kontak .card.active iframe{
+  pointer-events: auto;
+}
+#kontak iframe{
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer{
+  background:#020617;
+  text-align:center;
+  padding:25px;
+  color:#94a3b8;
+}
+/* =====================
+   RESPONSIVE MOBILE
+===================== */
+@media (max-width: 768px){
+
+  /* NAVBAR */
+  nav{
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a{
+    margin-left: 10px;
+    font-size: 14px;
+  }
+
+  /* HERO */
+  .hero{
+    padding: 60px 15px;
+  }
+  .hero h2{
+    font-size: 26px;
+  }
+  .hero p{
+    font-size: 16px;
+  }
+
+  /* SECTION */
+  section{
+    padding: 40px 15px;
+  }
+
+  .title h2{
+    font-size: 24px;
+  }
+
+  /* CARD */
+  .cards{
+    grid-template-columns: 1fr;
+  }
+
+  .card{
+    padding: 20px;
+  }
+
+  /* FORM */
+  form input,
+  form textarea,
+  form button{
+    font-size: 14px;
+  }
+
+  /* FOOTER */
+  footer{
+    font-size: 13px;
+  }
+}
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+  z-index:10000; /* 🔥 Biar gak ketutup */
+}
+.hamburger{
+  position:relative;
+}
+
+
+.hamburger span{
+  height:3px;
+  width:25px;
+  background:white;
+  margin:4px 0;
+  border-radius:3px;
+}
+
+/* NAV LINKS */
+.nav-links{
+  display:flex;
+}
+
+/* ===== NAVBAR RESPONSIVE ===== */
+.nav-links{
+  display:flex;
+}
+
+@media (max-width:768px){
+  nav{
+    flex-direction:row;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+  .nav-links{
+    display:none;
+    position:fixed;
+    top:70px;
+    right:20px;
+    background:#020617;
+    flex-direction:column;
+    width:200px;
+    border-radius:12px;
+    padding:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.5);
+    z-index:9998;
+  }
+
+  .nav-links a{
+    margin:10px 0;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">
+    <img src="logo prjct.png" alt="Logo MU-TECH">
+    <span>MU-TECH</span>
+  </div>
+
+  <!-- HAMBURGER -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- MENU -->
+  <div class="nav-links" id="navLinks">
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#layanan" onclick="toggleMenu()">Layanan</a>
+    <a href="#booking" onclick="toggleMenu()">Booking</a>
+    <a href="#keluhan" onclick="toggleMenu()">Keluhan</a>
+    <a href="#kontak" onclick="toggleMenu()">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h2>MU-TECH MATIC SERVIS</h2>
+  <h3>InsyaAllah:</h3>
+  <p>Amanah • Transparan • Berpengalaman</p>
+</div>
+
+<section id="about">
+  <div class="title">
+    <h2>🔧 About us</h2>
+  </div>
+  <div class="card">
+    <p>
+      Bengkel Motor <b>MU-TECH</b> adalah bengkel motor terpercaya yang melayani
+      perawatan dan perbaikan berbagai jenis sepeda motor, terkhusus motor matic.
+      Selain mekanik berpengalaman, kami juga mengedepankan Transparansi dalam pengerjaan 
+      serta adanya akad transaksi sebelum dilakukannya pengerjaan servis kendaraan.
+      Kami berkomitmen memberikan pelayanan terbaik, cepat, dan jujur.
+      Kepuasan pelanggan adalah prioritas utama kami.
+    </p>
+  </div>
+</section>
+
+
+<!-- LAYANAN -->
+<section id="layanan">
+  <div class="title">
+    <h2>🛠️ Layanan Kami</h2>
+  </div>
+  <div class="cards">
+    <div class="card">Servis Mesin</div>
+    <div class="card">Ganti Oli</div>
+    <div class="card">Kelistrikan Motor</div>
+    <div class="card">Rem, Rantai & Ban</div>
+    <div class="card">ganti sparepart</div>
+    <div class="card">tune up</div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="title">
+    <h2>📅 Booking Service</h2>
+  </div>
+  <div class="card">
+    <form onsubmit="booking(event)">
+      <input type="text" id="namaBooking" placeholder="Nama" required>
+      <input type="text" id="motorBooking" placeholder="Jenis Motor" required>
+      <input type="date" required>
+      <button>Booking Sekarang</button>
+    </form>
+  </div>
+</section>
+
+<!-- KELUHAN -->
+<section id="keluhan">
+  <div class="title">
+    <h2>📣 Keluhan Pelanggan</h2>
+  </div>
+  <div class="card">
+    <form onsubmit="keluhan(event)">
+      <input type="text" id="namaKeluhan" placeholder="Nama" required>
+      <input type="text" id="motorKeluhan" placeholder="Jenis Motor" required>
+      <textarea id="isiKeluhan" placeholder="Tuliskan keluhan motor..." required></textarea>
+      <button>Kirim Keluhan</button>
+    </form>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak">
+  <div class="card">
+    <h2>contact us</h2>
+    <br><br>
+ <a href="https://wa.me/6282300005015?text=Halo%20MU-TECH,%20saya%20ingin%20booking%20servis">
+  Booking via WhatsApp
+</a>
+
+      <br><br>
+      <p>📍 Jl.kutoarjo-ketawang km 2,5 sidarum, kutoarjo, purworejo,
+        jawa tengah, indonesia</p>
+      <br><br>
+      <p>⏰ 07.30 - 15.00</p>
+      <br><br>
+      <p>senin-sabtu:07.30-15.00</p>
+      <br><br>
+      <p>jumat:libur</p>
+    </div>
+    <br><br>
+    <div class="card">
+      <iframe
+  src="https://www.google.com/maps?q=Jl.%20Sawunggalih%20KM%202,5%20Sidarum%20Kutoarjo%20Purworejo&output=embed"
+  width="100%"
+  height="250"
+  style="border:0; border-radius:12px;"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 Bengkel Motor MU-TECH • Website Bengkel Profesional
+</footer>
+
+<script>
+function booking(e){
+  e.preventDefault();
+
+  const nama = document.getElementById("namaBooking").value;
+  const motor = document.getElementById("motorBooking").value;
+
+  const pesan = `Halo MU-TECH,
+Saya ${nama}
+Ingin booking servis motor ${motor}`;
+
+  // langsung buka WhatsApp
+  window.open(
+    "https://wa.me/6282300005015?text=" + encodeURIComponent(pesan),
+    "_blank"
+  );
+}
+
+/* AKTIF CARD LAYANAN */
+const cards = document.querySelectorAll("#layanan .card");
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+    cards.forEach(c => c.classList.remove("active"));
+    card.classList.add("active");
+  });
+});
+
+/* CARD CONTACT AKTIF */
+const contactCards = document.querySelectorAll("#kontak .card");
+contactCards.forEach(card => {
+  card.addEventListener("click", () => {
+    contactCards.forEach(c => c.classList.remove("active"));
+    card.classList.add("active");
+  });
+});
+function keluhan(e){
+  e.preventDefault();
+
+  const nama = document.getElementById("namaKeluhan").value;
+  const motor = document.getElementById("motorKeluhan").value;
+  const isi = document.getElementById("isiKeluhan").value;
+
+  const pesan = `Halo MU-TECH,
+Saya ${nama}
+Motor: ${motor}
+Keluhan:
+${isi}`;
+
+  window.open(
+    "https://wa.me/6282300005015?text=" + encodeURIComponent(pesan),
+    "_blank"
+  );
+}
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("active");
+}
+
+
+</script>
+
+
+</body>
+</html>
